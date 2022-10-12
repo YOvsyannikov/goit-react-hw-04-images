@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import apiService from './services';
-import Container from './components/Container';
-import Searchbar from './components/Searchbar';
-import ImageGallery from './components/ImageGallery';
-import Button from './components/Button';
-import LoaderComponent from './components/LoaderComponent';
-import Modal from './components/Modal';
-import ErrorView from './components/ErrorView';
+import apiService from '../services';
+import Container from './Container';
+import Searchbar from './Searchbar';
+import ImageGallery from './ImageGallery';
+import Button from './Button';
+import LoaderComponent from './LoaderComponent';
+import Modal from './Modal';
+import ErrorView from './ErrorView';
 
 class App extends Component {
   state = {
@@ -93,14 +93,8 @@ class App extends Component {
   };
 
   render() {
-    const {
-      query,
-      images,
-      largeImageURL,
-      isLoading,
-      showModal,
-      error,
-    } = this.state;
+    const { query, images, largeImageURL, isLoading, showModal, error } =
+      this.state;
     return (
       <Container>
         <Searchbar
