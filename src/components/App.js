@@ -10,20 +10,108 @@ import LoaderComponent from './LoaderComponent';
 import Modal from './Modal';
 import ErrorView from './ErrorView';
 
-class App extends Component {
-  state = {
-    query: '',
-    images: [],
-    largeImageURL: '',
-    page: 1,
-    error: null,
-    isLoading: false,
-    showModal: false,
-  };
+// class App extends Component {
+//   state = {
+//     name: '',
+//     images: [],
+//     page: 1,
+//     loading: false,
+//     showModal: false,
+//     modalImage: '',
+//     totalImages: 0,
+//   };
 
-  componentDidUpdate(_prevProps, prevState) {
+//   componentDidUpdate(_prevProps, prevState) {
+//     if (
+//       prevState.name !== this.state.name ||
+//       prevState.page !== this.state.page
+//     ) {
+//       this.setState({ loading: true });
+//       fetch(apiService)
+//         .then(response => response.json())
+//         .then(image => {
+//           if (!image.total) {
+//             return alert('К сожалению по Вашему запросу ничего не найдено');
+//           }
+
+//           this.setState(prevState => ({
+//             images: [...prevState.images, ...image.hits],
+//             totalImages: image.total,
+//           }));
+//         })
+//         .catch(error => error)
+//         .finally(() => {
+//           this.setState({ loading: false });
+//         });
+//     }
+//   }
+
+//   handleSubmit = name => {
+//     if (this.state.name === name) {
+//       return alert(`Вы уже просматриваете ${name}`);
+//     }
+//     this.setState({ name: name.toLowerCase(), images: [], page: 1 });
+//   };
+
+//   onLoadMoreClick = () => {
+//     this.setState(prevState => ({ page: prevState.page + 1 }));
+//   };
+
+//   onImageClick = url => {
+//     this.setState({
+//       modalImage: url,
+//       showModal: true,
+//     });
+//   };
+
+//   modalClose = () => {
+//     this.setState({ showModal: false });
+//   };
+
+//   render() {
+//     const { images, loading, showModal, modalImage, totalImages } = this.state;
+//     return (
+//       <>
+//         <Searchbar onSubmit={this.handleSubmit} />
+//         {loading && <LoaderComponent />}
+//         {images.length !== 0 && (
+//           <ImageGallery images={images} onImageClick={this.onImageClick} />
+//         )}
+//         {images.length !== totalImages && !loading && (
+//           <Button onClick={this.onLoadMoreClick} />
+//         )}
+//         {showModal && (
+//           <Modal
+//             image={modalImage}
+//             tag={this.props.tag}
+//             onModalClose={this.modalClose}
+//           />
+//         )}
+//       </>
+//     );
+//   }
+// }
+
+// class App extends Component {
+//   state = {
+//     query: '',
+//     images: [],
+//     largeImageURL: '',
+//     page: 1,
+//     error: null,
+//     isLoading: false,
+//     showModal: false,
+//     totalImages: 0,
+//   };
+
+//   componentDidUpdate(_prevProps, prevState) {
     if (prevState.query !== this.state.query) {
-      this.setState({ images: [], page: 1, error: null });
+      this.setState({
+        images: [],
+        page: 1,
+        error: null,
+        totalImages: image.total,
+      });
     }
   }
 

@@ -35,13 +35,14 @@ class Modal extends Component {
           <img src={largeImageURL} alt="" />
         </div>
       </div>,
-      modalRoot,
+      modalRoot
     );
   }
 }
 
 Modal.propTypes = {
   onToggleModal: PropTypes.func.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
 };
 
 export default Modal;
