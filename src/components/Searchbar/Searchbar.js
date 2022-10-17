@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import s from './Searchbar.module.css';
 
-function Searchbar({ onHandleSubmit, onSearchQueryChange, value }) {
+function Searchbar({ onHandleSubmit }) {
   return (
     <header className={s.header}>
       <form className={s.form} onSubmit={onHandleSubmit}>
@@ -11,12 +11,13 @@ function Searchbar({ onHandleSubmit, onSearchQueryChange, value }) {
 
         <input
           className={s.input}
+          name='query'
           type="text"
-          value={value}
+          // value={value}
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
-          onChange={onSearchQueryChange}
+          // onChange={onSearchQueryChange}
         />
       </form>
     </header>
@@ -25,8 +26,8 @@ function Searchbar({ onHandleSubmit, onSearchQueryChange, value }) {
 
 Searchbar.propTypes = {
   onHandleSubmit: PropTypes.func.isRequired,
-  onSearchQueryChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  // onSearchQueryChange: PropTypes.func.isRequired,
+  // value: PropTypes.string.isRequired,
 };
 
 export default Searchbar;
