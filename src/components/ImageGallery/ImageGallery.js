@@ -19,13 +19,8 @@ function ImageGallery({ images, onOpenModal }) {
 }
 
 ImageGallery.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    })
-  ).isRequired,
+  images: PropTypes.array.isRequired,
   onOpenModal: PropTypes.func.isRequired,
-  // id: PropTypes.array.isRequired,
 };
 
 export default ImageGallery;
