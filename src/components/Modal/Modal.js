@@ -36,6 +36,7 @@ function Modal({ largeImageURL, onToggleModal }) {
 
 Modal.propTypes = {
   onToggleModal: PropTypes.func.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
 };
 
 export default Modal;

@@ -52,9 +52,7 @@ function App() {
 
   const onLoadMore = () => {
     setIsLoading(true);
-    setPage(prev => ({
-      page: prev.page + 1,
-    }));
+    setPage(page => page + 1);
     scrollPage();
   };
 
