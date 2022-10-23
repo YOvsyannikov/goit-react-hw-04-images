@@ -14,6 +14,7 @@ function Searchbar({ onHandleSubmit }) {
     }
     onHandleSubmit(query);
     setQuery('');
+    // это здесь нужно чтото изменить, но непонимаю как это сделать.
   };
 
   return (
