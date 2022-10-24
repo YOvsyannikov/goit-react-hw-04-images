@@ -43,11 +43,13 @@ function App() {
   }, [page, query]);
 
   const searchImages = newSearch => {
-    setQuery(newSearch);
-    setImages([]);
-    setPage(1);
-    setError(null);
-    setIsLoading(true);
+    if (newSearch !== query) {
+      setQuery(newSearch);
+      setImages([]);
+      setPage(1);
+      setError(null);
+      setIsLoading(true);
+    }
   };
 
   const onLoadMore = () => {

@@ -13,8 +13,6 @@ function Searchbar({ onHandleSubmit }) {
       return toast.info('😱 Please enter a value for search images!');
     }
     onHandleSubmit(query);
-    setQuery('');
-    // это здесь нужно чтото изменить, но непонимаю как это сделать.
   };
 
   return (
